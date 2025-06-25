@@ -20,8 +20,12 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'arabic': ['Noto Sans Arabic', 'sans-serif'],
-				'english': ['Inter', 'sans-serif'],
+				'arabic': ['Cairo', 'Tajawal', 'sans-serif'],
+				'english': ['Inter', 'Poppins', 'sans-serif'],
+				'cairo': ['Cairo', 'sans-serif'],
+				'tajawal': ['Tajawal', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif'],
+				'poppins': ['Poppins', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -57,10 +61,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Law firm specific colors
+				// Enhanced law firm specific colors
 				navy: {
 					50: '#f0f4f8',
 					100: '#d9e2ec',
+					200: '#b3c5d1',
+					300: '#8da8b6',
+					400: '#678b9b',
 					500: '#334155',
 					600: '#1e293b',
 					700: '#0f172a',
@@ -70,10 +77,14 @@ export default {
 				gold: {
 					50: '#fefce8',
 					100: '#fef3c7',
+					200: '#fde68a',
+					300: '#fcd34d',
 					400: '#fbbf24',
 					500: '#f59e0b',
 					600: '#d97706',
-					700: '#b45309'
+					700: '#b45309',
+					800: '#92400e',
+					900: '#78350f'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -111,18 +122,40 @@ export default {
 				'fade-in': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateY(10px)'
+						transform: 'translateY(20px)'
 					},
 					'100%': {
 						opacity: '1',
 						transform: 'translateY(0)'
+					}
+				},
+				'slide-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(30px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'scale-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'scale(0.9)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'scale(1)'
 					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.6s ease-out'
+				'fade-in': 'fade-in 0.6s ease-out',
+				'slide-up': 'slide-up 0.8s ease-out',
+				'scale-in': 'scale-in 0.5s ease-out'
 			}
 		}
 	},
