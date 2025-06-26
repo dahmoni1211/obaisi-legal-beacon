@@ -94,21 +94,31 @@
 
   body {
     @apply bg-background text-foreground transition-colors duration-300;
-    font-family: 'Inter', 'Poppins', 'Cairo', 'Tajawal', sans-serif;
+    font-family: 'GE SS Two', 'Inter', 'Poppins', 'Cairo', 'Tajawal', sans-serif;
     scroll-behavior: smooth;
   }
 
   html[dir="rtl"] {
-    font-family: 'Cairo', 'Tajawal', 'Inter', 'Poppins', sans-serif;
+    font-family: 'GE SS Two', 'Cairo', 'Tajawal', 'Inter', 'Poppins', sans-serif;
   }
 
   /* Enhanced typography classes */
   .font-arabic {
-    font-family: 'Cairo', 'Tajawal', sans-serif;
+    font-family: 'GE SS Two', 'Cairo', 'Tajawal', sans-serif;
   }
 
   .font-english {
     font-family: 'Inter', 'Poppins', sans-serif;
+  }
+
+  .font-ge-ss-two {
+    font-family: 'GE SS Two', sans-serif;
+    font-weight: 600;
+  }
+
+  .font-ge-ss-two-light {
+    font-family: 'GE SS Two', sans-serif;
+    font-weight: 300;
   }
 }
 
@@ -148,7 +158,7 @@
   }
 
   .golden-button {
-    @apply bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white font-semibold px-8 py-3 rounded-full smooth-hover hover:shadow-lg hover:scale-105;
+    @apply bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white font-semibold px-8 py-3 rounded-full smooth-hover hover:shadow-lg;
   }
 
   /* Sticky header */

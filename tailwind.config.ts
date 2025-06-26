@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,12 +19,14 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'arabic': ['Cairo', 'Tajawal', 'sans-serif'],
+				'arabic': ['GE SS Two', 'Cairo', 'Tajawal', 'sans-serif'],
 				'english': ['Inter', 'Poppins', 'sans-serif'],
 				'cairo': ['Cairo', 'sans-serif'],
 				'tajawal': ['Tajawal', 'sans-serif'],
 				'inter': ['Inter', 'sans-serif'],
 				'poppins': ['Poppins', 'sans-serif'],
+				'ge-ss-two': ['GE SS Two', 'sans-serif'],
+				'ge-ss-two-light': ['GE SS Two', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

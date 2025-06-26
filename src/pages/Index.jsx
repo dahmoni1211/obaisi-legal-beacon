@@ -7,7 +7,7 @@ import { getTranslation } from '@/lib/translations';
 import { toast } from '@/hooks/use-toast';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Scale, Shield, FileText, Gavel } from 'lucide-react';
+import { Scale, Shield, FileText, Gavel, Eye, Target } from 'lucide-react';
 
 const Index = () => {
   const { language, isArabic } = useLanguage();
@@ -41,35 +41,30 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       
-      {/* Enhanced Hero Section */}
+      {/* Enhanced Hero Section with Logo */}
       <section className="relative min-h-screen flex items-center justify-center hero-bg">
         <div className="hero-content text-center px-4 max-w-5xl mx-auto">
           <div className="animate-fade-in">
-            <h1 className={`text-5xl md:text-7xl font-bold text-white mb-8 leading-tight ${isArabic ? 'font-arabic' : 'font-english'}`}>
-              {isArabic ? (
-                <>
-                  معك خطوة بخطوة، لنقودك بثقة
-                  <br />
-                  <span className="text-gold-300">نحو العدالة وحماية حقوقك</span>
-                </>
-              ) : (
-                <>
-                  With you every step of the way
-                  <br />
-                  <span className="text-gold-300">toward justice and protecting your rights</span>
-                </>
-              )}
-            </h1>
-            <p className={`text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-4xl mx-auto ${isArabic ? 'font-arabic' : 'font-english'}`}>
-              {isArabic 
-                ? "باستشارات قانونية دقيقة تحفظ حقك من البداية" 
-                : "Through precise legal consultation from the very beginning"
-              }
+            {/* Logo above text */}
+            <div className="mb-8">
+              <img 
+                src="/lovable-uploads/c88ded15-f299-41ed-a031-22c2957734cd.png" 
+                alt="Law Firm Logo" 
+                className="h-24 w-24 mx-auto mb-4 filter brightness-110"
+              />
+              <h1 className={`text-3xl md:text-5xl font-bold text-white mb-4 leading-tight font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
+                {t('heroTitle')}
+              </h1>
+            </div>
+            
+            <p className={`text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-4xl mx-auto font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
+              {t('heroSubtitle')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
               <Button 
                 size="lg" 
-                className="golden-button text-lg px-10 py-4"
+                className="golden-button text-base px-8 py-3 font-ge-ss-two transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 onClick={handleConsultationClick}
                 asChild
               >
@@ -78,38 +73,46 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-white text-white hover:bg-white hover:text-navy-800 px-10 py-4 text-lg smooth-hover backdrop-blur-sm"
+                className="border-2 border-white text-white hover:bg-white hover:text-navy-800 px-8 py-3 text-base smooth-hover backdrop-blur-sm transition-all duration-300 hover:scale-105 font-ge-ss-two"
                 asChild
               >
                 <a href="https://wa.me/966123456789" target="_blank" rel="noopener noreferrer">
                   {t('whatsappContact')}
                 </a>
               </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-2 border-white text-white hover:bg-white hover:text-navy-800 px-8 py-3 text-base smooth-hover backdrop-blur-sm transition-all duration-300 hover:scale-105 font-ge-ss-two"
+                asChild
+              >
+                <Link to="/services">{t('services')}</Link>
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Enhanced About Section */}
-      <section className="py-24 bg-background">
+      {/* About Section */}
+      <section id="about" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16 animate-fade-in">
-              <h2 className={`text-4xl md:text-5xl font-bold text-foreground mb-8 ${isArabic ? 'font-arabic' : 'font-english'}`}>
+            <div className="text-center mb-12 animate-fade-in">
+              <h2 className={`text-3xl md:text-4xl font-bold text-foreground mb-6 font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
                 {t('aboutTitle')}
               </h2>
-              <p className={`text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto ${isArabic ? 'font-arabic' : 'font-english'}`}>
+              <p className={`text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
                 {t('aboutDescription')}
               </p>
             </div>
             
-            {/* Enhanced Values Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Values Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((value, index) => (
                 <Card key={index} className="card-hover border-2 border-gold-200 dark:border-gold-700 hover:border-gold-400 dark:hover:border-gold-500 animate-scale-in" style={{animationDelay: `${index * 0.1}s`}}>
-                  <CardContent className="p-8 text-center">
-                    <value.icon className={`w-12 h-12 ${value.color} mx-auto mb-6`} />
-                    <h3 className={`font-semibold text-lg text-foreground ${isArabic ? 'font-arabic' : 'font-english'}`}>
+                  <CardContent className="p-6 text-center">
+                    <value.icon className={`w-10 h-10 ${value.color} mx-auto mb-4`} />
+                    <h3 className={`font-semibold text-base text-foreground font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
                       {value.title}
                     </h3>
                   </CardContent>
@@ -120,18 +123,18 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Why Choose Us Section */}
-      <section className="py-24 bg-gradient-to-br from-navy-50 to-gold-50 dark:from-navy-900 dark:to-navy-800">
+      {/* Why Choose Us Section */}
+      <section id="whyUs" className="py-20 bg-gradient-to-br from-navy-50 to-gold-50 dark:from-navy-900 dark:to-navy-800">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className={`text-4xl md:text-5xl font-bold text-center text-foreground mb-16 ${isArabic ? 'font-arabic' : 'font-english'}`}>
+            <h2 className={`text-3xl md:text-4xl font-bold text-center text-foreground mb-12 font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
               {t('whyUsTitle')}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {whyUsPoints.map((point, index) => (
-                <div key={index} className="flex items-start space-x-4 rtl:space-x-reverse animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
-                  <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-gold-500 to-gold-600 rounded-full mt-2"></div>
-                  <p className={`text-foreground text-lg leading-relaxed ${isArabic ? 'font-arabic' : 'font-english'}`}>
+                <div key={index} className="flex items-start space-x-3 rtl:space-x-reverse animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
+                  <div className="flex-shrink-0 w-2 h-2 bg-gradient-to-r from-gold-500 to-gold-600 rounded-full mt-3"></div>
+                  <p className={`text-foreground text-base leading-relaxed font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
                     {point}
                   </p>
                 </div>
@@ -141,34 +144,54 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Enhanced Vision Section */}
-      <section className="py-24 bg-background">
+      {/* Vision Section */}
+      <section id="vision" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center animate-fade-in">
-            <h2 className={`text-4xl md:text-5xl font-bold text-foreground mb-8 ${isArabic ? 'font-arabic' : 'font-english'}`}>
-              {t('visionTitle')}
-            </h2>
-            <p className={`text-xl text-muted-foreground leading-relaxed ${isArabic ? 'font-arabic' : 'font-english'}`}>
+            <div className="flex items-center justify-center mb-6">
+              <Eye className="w-12 h-12 text-gold-600 mr-4" />
+              <h2 className={`text-3xl md:text-4xl font-bold text-foreground font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
+                {t('visionTitle')}
+              </h2>
+            </div>
+            <p className={`text-lg text-muted-foreground leading-relaxed font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
               {t('visionText')}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Enhanced CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-navy-800 to-navy-900 relative overflow-hidden">
+      {/* Mission Section */}
+      <section id="mission" className="py-20 bg-gradient-to-br from-gold-50 to-navy-50 dark:from-navy-900 dark:to-gold-900">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto text-center animate-fade-in">
+            <div className="flex items-center justify-center mb-6">
+              <Target className="w-12 h-12 text-gold-600 mr-4" />
+              <h2 className={`text-3xl md:text-4xl font-bold text-foreground font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
+                {t('missionTitle')}
+              </h2>
+            </div>
+            <p className={`text-lg text-muted-foreground leading-relaxed font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
+              {t('missionText')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-navy-800 to-navy-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-gold-600/10 to-transparent"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className={`text-4xl md:text-5xl font-bold text-white mb-8 ${isArabic ? 'font-arabic' : 'font-english'}`}>
+          <h2 className={`text-3xl md:text-4xl font-bold text-white mb-6 font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
             {isArabic ? 'جاهزون لمساعدتك؟' : 'Ready to Get Started?'}
           </h2>
-          <p className={`text-xl text-white/90 mb-12 max-w-2xl mx-auto ${isArabic ? 'font-arabic' : 'font-english'}`}>
+          <p className={`text-lg text-white/90 mb-8 max-w-2xl mx-auto font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
             {isArabic ? 'احجز استشارتك القانونية اليوم واحصل على الدعم المهني الذي تحتاجه' : 'Book your legal consultation today and get the professional support you need'}
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="golden-button text-lg px-10 py-4"
+              className="golden-button text-base px-8 py-3 font-ge-ss-two transition-all duration-300 hover:scale-105"
               onClick={handleConsultationClick}
               asChild
             >
@@ -177,7 +200,7 @@ const Index = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-navy-800 px-10 py-4 text-lg smooth-hover"
+              className="border-2 border-white text-white hover:bg-white hover:text-navy-800 px-8 py-3 text-base smooth-hover font-ge-ss-two transition-all duration-300 hover:scale-105"
               asChild
             >
               <Link to="/services">{t('services')}</Link>

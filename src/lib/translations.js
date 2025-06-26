@@ -4,12 +4,16 @@ export const translations = {
     // Navigation
     home: 'الرئيسية',
     about: 'من نحن',
-    services: 'خدماتنا',
+    whyUs: 'لماذا نحن',
+    services: 'الخدمات القانونية',
+    legalKnowledge: 'المعرفة القانونية',
+    vision: 'رؤيتنا',
+    mission: 'رسالتنا',
     contact: 'تواصل معنا',
     
     // Hero Section
     heroTitle: 'مكتب حاتم ماجد العبيسي للمحاماة',
-    heroSubtitle: 'معك خطوة بخطوة، لنقودك بثقة نحو العدالة وحماية حقوقك، باستشارات قانونية دقيقة تحفظ حقك من البداية.',
+    heroSubtitle: 'معك خطوة بخطوة، نرشدك بثقة نحو العدالة ونحمي حقوقك، من خلال استشارات قانونية دقيقة تحفظ حقك من البداية',
     bookConsultation: 'احجز استشارة',
     whatsappContact: 'تواصل عبر واتساب',
     
@@ -36,7 +40,15 @@ export const translations = {
     
     // Vision
     visionTitle: 'رؤيتنا',
-    visionText: 'أن نكون الشريك القانوني الرائد في المملكة العربية السعودية للأفراد والشركات والمؤسسات، من خلال تقديم خدمات قانونية عالية الجودة قائمة على الثقة والدقة والالتزام المهني، مساهمين في رؤية المملكة 2030.',
+    visionText: 'أن نكون الشريك القانوني الأول في المملكة، بتقديم خدمات قانونية موثوقة بمعايير عالمية، تُعزز الثقة، وتحمي الحقوق، وتواكب تطلعات رؤية السعودية 2030 لبيئة قانونية متقدمة.',
+    
+    // Mission
+    missionTitle: 'رسالتنا',
+    missionText: 'تقديم استشارات قانونية دقيقة وخدمات قضائية متميزة، بأعلى معايير المهنية والشفافية، لحماية حقوق عملائنا وتحقيق العدالة في إطار القانون السعودي.',
+    
+    // Legal Knowledge
+    legalKnowledgeTitle: 'المعرفة القانونية',
+    legalKnowledgeDescription: 'مركز متخصص في نشر المعرفة القانونية وآخر التحديثات في القوانين السعودية',
     
     // Services
     servicesTitle: 'خدماتنا القانونية',
@@ -76,12 +88,16 @@ export const translations = {
     // Navigation
     home: 'Home',
     about: 'About Us',
-    services: 'Our Services',
+    whyUs: 'Why Us',
+    services: 'Legal Services',
+    legalKnowledge: 'Legal Knowledge',
+    vision: 'Our Vision',
+    mission: 'Our Mission',
     contact: 'Contact Us',
     
     // Hero Section
     heroTitle: 'Hatem Majed Al-Obaisi Law Firm',
-    heroSubtitle: 'With you every step of the way — guiding you confidently toward justice and protecting your rights through precise legal consultation from the very beginning.',
+    heroSubtitle: 'With you every step of the way, we guide you confidently toward justice and protect your rights through precise legal consultation that preserves your rights from the beginning.',
     bookConsultation: 'Book Consultation',
     whatsappContact: 'Contact via WhatsApp',
     
@@ -108,7 +124,15 @@ export const translations = {
     
     // Vision
     visionTitle: 'Our Vision',
-    visionText: 'To be the leading legal partner in Saudi Arabia for individuals, companies, and institutions, delivering high-quality legal services based on trust, accuracy, and professional commitment, contributing to the Kingdom\'s Vision 2030.',
+    visionText: 'To be the leading legal partner in the Kingdom, providing reliable legal services with international standards that enhance trust, protect rights, and align with Saudi Vision 2030 aspirations for an advanced legal environment.',
+    
+    // Mission
+    missionTitle: 'Our Mission',
+    missionText: 'To provide precise legal consultations and distinguished judicial services with the highest standards of professionalism and transparency, protecting our clients\' rights and achieving justice within the framework of Saudi law.',
+    
+    // Legal Knowledge
+    legalKnowledgeTitle: 'Legal Knowledge',
+    legalKnowledgeDescription: 'Specialized center for disseminating legal knowledge and latest updates in Saudi laws',
     
     // Services
     servicesTitle: 'Legal Services',
