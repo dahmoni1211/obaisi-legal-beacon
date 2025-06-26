@@ -22,16 +22,38 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     
-    toast({
-      title: isArabic ? 'تم إرسال الرسالة' : 'Message Sent',
-      description: isArabic ? 'سنتواصل معك قريباً' : 'We will contact you soon',
-    });
+    // Simulate sending email to Law.hatem1@gmail.com
+    try {
+      // Here you would integrate with your email service
+      console.log('Sending email to: Law.hatem1@gmail.com');
+      console.log('Email content:', {
+        to: 'Law.hatem1@gmail.com',
+        subject: `New Contact Form Submission from ${formData.name}`,
+        body: `
+          Name: ${formData.name}
+          Email: ${formData.email}
+          Phone: ${formData.phone}
+          Message: ${formData.message}
+        `
+      });
+      
+      toast({
+        title: isArabic ? 'تم إرسال الرسالة بنجاح!' : 'Message Sent Successfully!',
+        description: isArabic ? 'سنتواصل معك قريباً' : 'We will contact you soon',
+      });
 
-    setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (error) {
+      toast({
+        title: isArabic ? 'خطأ في الإرسال' : 'Sending Error',
+        description: isArabic ? 'حدث خطأ، يرجى المحاولة مرة أخرى' : 'An error occurred, please try again',
+        variant: 'destructive'
+      });
+    }
   };
 
   const handleChange = (e) => {
@@ -45,24 +67,26 @@ const Contact = () => {
     <div className="min-h-screen">
       <Header />
       
-      <div className="pt-20">
+      <div className="pt-28">
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-12">
+              <h1 className={`text-4xl md:text-5xl font-bold text-center text-foreground mb-12 font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
                 {t('contact')}
               </h1>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {/* Contact Form */}
-                <Card>
+                <Card className="border-2 border-gold-200 dark:border-gold-700">
                   <CardHeader>
-                    <CardTitle>{t('sendMessage')}</CardTitle>
+                    <CardTitle className={`font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
+                      {t('sendMessage')}
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <form onSubmit={handleSubmit} className="space-y-6">
                       <div>
-                        <label className="block text-sm font-medium mb-2">
+                        <label className={`block text-sm font-medium mb-2 font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
                           {t('name')}
                         </label>
                         <Input
@@ -76,7 +100,7 @@ const Contact = () => {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium mb-2">
+                        <label className={`block text-sm font-medium mb-2 font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
                           {t('email')}
                         </label>
                         <Input
@@ -90,7 +114,7 @@ const Contact = () => {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium mb-2">
+                        <label className={`block text-sm font-medium mb-2 font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
                           {t('phone')}
                         </label>
                         <Input
@@ -104,7 +128,7 @@ const Contact = () => {
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium mb-2">
+                        <label className={`block text-sm font-medium mb-2 font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
                           {t('message')}
                         </label>
                         <Textarea
@@ -119,7 +143,7 @@ const Contact = () => {
 
                       <Button 
                         type="submit" 
-                        className="w-full bg-gold-600 hover:bg-gold-700 text-white"
+                        className="w-full golden-button font-ge-ss-two"
                       >
                         {t('send')}
                       </Button>
@@ -129,42 +153,54 @@ const Contact = () => {
 
                 {/* Contact Info */}
                 <div className="space-y-8">
-                  <Card>
+                  <Card className="border-2 border-gold-200 dark:border-gold-700">
                     <CardHeader>
-                      <CardTitle>{t('whatsappContact')}</CardTitle>
+                      <CardTitle className={`font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
+                        {t('whatsappContact')}
+                      </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="mb-4">{isArabic ? 'تواصل معنا مباشرة عبر واتساب للاستشارة السريعة' : 'Contact us directly via WhatsApp for quick consultation'}</p>
+                      <p className={`mb-4 font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
+                        {isArabic ? 'تواصل معنا مباشرة عبر واتساب للاستشارة السريعة' : 'Contact us directly via WhatsApp for quick consultation'}
+                      </p>
                       <Button 
-                        className="w-full bg-green-600 hover:bg-green-700 text-white"
+                        className="w-full golden-button font-ge-ss-two"
                         asChild
                       >
-                        <a href="https://wa.me/966123456789" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/966576808900" target="_blank" rel="noopener noreferrer">
                           {t('whatsappContact')}
                         </a>
                       </Button>
                     </CardContent>
                   </Card>
 
-                  <Card>
+                  <Card className="border-2 border-gold-200 dark:border-gold-700">
                     <CardHeader>
-                      <CardTitle>{isArabic ? 'موقعنا' : 'Our Location'}</CardTitle>
+                      <CardTitle className={`font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
+                        {isArabic ? 'موقعنا' : 'Our Location'}
+                      </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground">
+                      <p className={`text-muted-foreground font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
                         {t('location')}
                       </p>
                     </CardContent>
                   </Card>
 
-                  <Card>
+                  <Card className="border-2 border-gold-200 dark:border-gold-700">
                     <CardHeader>
-                      <CardTitle>{isArabic ? 'ساعات العمل' : 'Working Hours'}</CardTitle>
+                      <CardTitle className={`font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
+                        {t('workingHours')}
+                      </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-2">
-                        <p>{isArabic ? 'الأحد - الخميس: 9:00 ص - 6:00 م' : 'Sunday - Thursday: 9:00 AM - 6:00 PM'}</p>
-                        <p>{isArabic ? 'الجمعة - السبت: مغلق' : 'Friday - Saturday: Closed'}</p>
+                        <p className={`font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
+                          {t('workingTime')}
+                        </p>
+                        <p className={`font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
+                          {t('weekend')}
+                        </p>
                       </div>
                     </CardContent>
                   </Card>

@@ -17,42 +17,39 @@ const Header = () => {
   const navigation = [
     { name: t('home'), href: '/' },
     { name: t('about'), href: '/#about' },
-    { name: t('whyUs'), href: '/#whyUs' },
     { name: t('services'), href: '/services' },
     { name: t('legalKnowledge'), href: '/legal-knowledge' },
-    { name: t('vision'), href: '/#vision' },
-    { name: t('mission'), href: '/#mission' },
     { name: t('contact'), href: '/contact' },
   ];
 
   return (
     <header className="sticky-header">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          {/* Enhanced Logo */}
-          <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <div className="flex items-center justify-between h-24">
+          {/* Enhanced Logo - Made Larger */}
+          <Link to="/" className="flex items-center space-x-4 rtl:space-x-reverse">
             <img 
               src="/lovable-uploads/c88ded15-f299-41ed-a031-22c2957734cd.png" 
               alt="Law Firm Logo" 
-              className="h-14 w-14 smooth-hover hover:scale-105"
+              className="h-20 w-20 smooth-hover hover:scale-105"
             />
             <div className="flex flex-col">
-              <span className={`font-bold text-xl text-navy-700 dark:text-gold-400 font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
+              <span className={`font-bold text-2xl text-navy-700 dark:text-gold-400 font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
                 {isArabic ? 'مكتب حاتم ماجد العبيسي' : 'Al-Obaisi Law Firm'}
               </span>
-              <span className="text-sm text-muted-foreground font-ge-ss-two-light">
+              <span className="text-base text-muted-foreground font-ge-ss-two-light">
                 {isArabic ? 'للمحاماة والاستشارات القانونية' : 'Legal Consultation & Services'}
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6 rtl:space-x-reverse">
+          <nav className="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium text-foreground hover:text-gold-600 smooth-hover relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-gold-600 after:transition-all after:duration-300 hover:after:w-full font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}
+                className={`text-base font-medium text-foreground hover:text-gold-600 smooth-hover relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-gold-600 after:transition-all after:duration-300 hover:after:w-full font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}
               >
                 {item.name}
               </Link>

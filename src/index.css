@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Enhanced law firm design system with navy, gold, and elegant tones */
+/* Enhanced professional law firm design system */
 
 @layer base {
   :root {
@@ -96,13 +96,14 @@
     @apply bg-background text-foreground transition-colors duration-300;
     font-family: 'GE SS Two', 'Inter', 'Poppins', 'Cairo', 'Tajawal', sans-serif;
     scroll-behavior: smooth;
+    line-height: 1.6;
   }
 
   html[dir="rtl"] {
     font-family: 'GE SS Two', 'Cairo', 'Tajawal', 'Inter', 'Poppins', sans-serif;
   }
 
-  /* Enhanced typography classes */
+  /* Enhanced professional typography classes */
   .font-arabic {
     font-family: 'GE SS Two', 'Cairo', 'Tajawal', sans-serif;
   }
@@ -114,9 +115,24 @@
   .font-ge-ss-two {
     font-family: 'GE SS Two', sans-serif;
     font-weight: 600;
+    letter-spacing: -0.025em;
   }
 
   .font-ge-ss-two-light {
+    font-family: 'GE SS Two', sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.015em;
+  }
+
+  /* Professional heading styles */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'GE SS Two', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  /* Professional body text */
+  p, span, div {
     font-family: 'GE SS Two', sans-serif;
     font-weight: 300;
   }
@@ -138,8 +154,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(2px);
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(1px);
     z-index: 1;
   }
 
@@ -148,32 +164,51 @@
     z-index: 2;
   }
 
-  /* Smooth animations */
+  /* Professional smooth animations */
   .smooth-hover {
     @apply transition-all duration-300 ease-in-out;
   }
 
   .card-hover {
-    @apply smooth-hover hover:shadow-xl hover:-translate-y-1;
+    @apply smooth-hover hover:shadow-2xl hover:-translate-y-2 hover:scale-105;
   }
 
   .golden-button {
-    @apply bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white font-semibold px-8 py-3 rounded-full smooth-hover hover:shadow-lg;
+    @apply bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white font-semibold px-8 py-3 rounded-full smooth-hover hover:shadow-xl hover:scale-105;
+    font-family: 'GE SS Two', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
   }
 
-  /* Sticky header */
+  /* Enhanced sticky header */
   .sticky-header {
-    @apply fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50 transition-all duration-300;
+    @apply fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50 transition-all duration-300 shadow-lg;
+  }
+
+  /* Professional text sizing */
+  .text-professional {
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+
+  .text-professional-lg {
+    font-size: 1.25rem;
+    line-height: 1.8;
+  }
+
+  .text-professional-xl {
+    font-size: 1.5rem;
+    line-height: 1.6;
   }
 }
 
-/* Custom scrollbar */
+/* Enhanced professional scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-muted;
+  @apply bg-muted/50;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -182,4 +217,62 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-gold-500;
+}
+
+/* Professional focus styles */
+*:focus {
+  outline: 2px solid theme('colors.gold.500');
+  outline-offset: 2px;
+}
+
+/* Enhanced animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out;
+}
+
+/* Professional responsive text scaling */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
 }

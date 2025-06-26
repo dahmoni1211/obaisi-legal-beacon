@@ -23,7 +23,6 @@ const Index = () => {
   const whyUsPoints = [
     t('professionalism'),
     t('accuracy'),
-    t('expertise'),
     t('bilingual'),
     t('partnership'),
     t('confidentiality'),
@@ -45,26 +44,26 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center justify-center hero-bg">
         <div className="hero-content text-center px-4 max-w-5xl mx-auto">
           <div className="animate-fade-in">
-            {/* Logo above text */}
-            <div className="mb-8">
+            {/* Logo above text - Made Larger */}
+            <div className="mb-10">
               <img 
                 src="/lovable-uploads/c88ded15-f299-41ed-a031-22c2957734cd.png" 
                 alt="Law Firm Logo" 
-                className="h-24 w-24 mx-auto mb-4 filter brightness-110"
+                className="h-32 w-32 mx-auto mb-6 filter brightness-110"
               />
-              <h1 className={`text-3xl md:text-5xl font-bold text-white mb-4 leading-tight font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
+              <h1 className={`text-4xl md:text-6xl font-bold text-white mb-6 leading-tight font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
                 {t('heroTitle')}
               </h1>
             </div>
             
-            <p className={`text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-4xl mx-auto font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
+            <p className={`text-xl md:text-2xl text-white/90 mb-10 leading-relaxed max-w-4xl mx-auto font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
               {t('heroSubtitle')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
               <Button 
                 size="lg" 
-                className="golden-button text-base px-8 py-3 font-ge-ss-two transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                className="golden-button text-lg px-10 py-4 font-ge-ss-two transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 onClick={handleConsultationClick}
                 asChild
               >
@@ -72,18 +71,16 @@ const Index = () => {
               </Button>
               <Button 
                 size="lg" 
-                variant="outline" 
-                className="border-2 border-white text-white hover:bg-white hover:text-navy-800 px-8 py-3 text-base smooth-hover backdrop-blur-sm transition-all duration-300 hover:scale-105 font-ge-ss-two"
+                className="golden-button text-lg px-10 py-4 font-ge-ss-two transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 asChild
               >
-                <a href="https://wa.me/966123456789" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/966576808900" target="_blank" rel="noopener noreferrer">
                   {t('whatsappContact')}
                 </a>
               </Button>
               <Button 
                 size="lg" 
-                variant="outline" 
-                className="border-2 border-white text-white hover:bg-white hover:text-navy-800 px-8 py-3 text-base smooth-hover backdrop-blur-sm transition-all duration-300 hover:scale-105 font-ge-ss-two"
+                className="golden-button text-lg px-10 py-4 font-ge-ss-two transition-all duration-300 hover:scale-105 hover:shadow-lg"
                 asChild
               >
                 <Link to="/services">{t('services')}</Link>
@@ -97,13 +94,13 @@ const Index = () => {
       <section id="about" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12 animate-fade-in">
-              <h2 className={`text-3xl md:text-4xl font-bold text-foreground mb-6 font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
+            <div className="text-center mb-16 animate-fade-in">
+              <h2 className={`text-4xl md:text-5xl font-bold text-foreground mb-8 font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
                 {t('aboutTitle')}
               </h2>
-              <p className={`text-lg text-muted-foreground leading-relaxed max-w-4xl mx-auto font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
+              <div className={`text-lg text-muted-foreground leading-relaxed max-w-5xl mx-auto font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'} whitespace-pre-line`}>
                 {t('aboutDescription')}
-              </p>
+              </div>
             </div>
             
             {/* Values Grid */}
@@ -111,8 +108,8 @@ const Index = () => {
               {values.map((value, index) => (
                 <Card key={index} className="card-hover border-2 border-gold-200 dark:border-gold-700 hover:border-gold-400 dark:hover:border-gold-500 animate-scale-in" style={{animationDelay: `${index * 0.1}s`}}>
                   <CardContent className="p-6 text-center">
-                    <value.icon className={`w-10 h-10 ${value.color} mx-auto mb-4`} />
-                    <h3 className={`font-semibold text-base text-foreground font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
+                    <value.icon className={`w-12 h-12 ${value.color} mx-auto mb-4`} />
+                    <h3 className={`font-semibold text-lg text-foreground font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
                       {value.title}
                     </h3>
                   </CardContent>
@@ -127,18 +124,27 @@ const Index = () => {
       <section id="whyUs" className="py-20 bg-gradient-to-br from-navy-50 to-gold-50 dark:from-navy-900 dark:to-navy-800">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className={`text-3xl md:text-4xl font-bold text-center text-foreground mb-12 font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
+            <h2 className={`text-4xl md:text-5xl font-bold text-center text-foreground mb-8 font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
               {t('whyUsTitle')}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <div className={`text-lg text-muted-foreground leading-relaxed text-center max-w-4xl mx-auto mb-12 font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'} whitespace-pre-line`}>
+              {t('whyUsDescription')}
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {whyUsPoints.map((point, index) => (
                 <div key={index} className="flex items-start space-x-3 rtl:space-x-reverse animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
-                  <div className="flex-shrink-0 w-2 h-2 bg-gradient-to-r from-gold-500 to-gold-600 rounded-full mt-3"></div>
-                  <p className={`text-foreground text-base leading-relaxed font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
+                  <div className="flex-shrink-0 w-3 h-3 bg-gradient-to-r from-gold-500 to-gold-600 rounded-full mt-2"></div>
+                  <p className={`text-foreground text-lg leading-relaxed font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
                     {point}
                   </p>
                 </div>
               ))}
+            </div>
+            
+            <div className={`text-lg text-center text-foreground font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'} animate-fade-in`}>
+              {t('whyUsClosing')}
             </div>
           </div>
         </div>
@@ -148,13 +154,13 @@ const Index = () => {
       <section id="vision" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center animate-fade-in">
-            <div className="flex items-center justify-center mb-6">
-              <Eye className="w-12 h-12 text-gold-600 mr-4" />
-              <h2 className={`text-3xl md:text-4xl font-bold text-foreground font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
+            <div className="flex items-center justify-center mb-8">
+              <Eye className="w-16 h-16 text-gold-600 mr-4" />
+              <h2 className={`text-4xl md:text-5xl font-bold text-foreground font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
                 {t('visionTitle')}
               </h2>
             </div>
-            <p className={`text-lg text-muted-foreground leading-relaxed font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
+            <p className={`text-xl text-muted-foreground leading-relaxed font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
               {t('visionText')}
             </p>
           </div>
@@ -165,13 +171,13 @@ const Index = () => {
       <section id="mission" className="py-20 bg-gradient-to-br from-gold-50 to-navy-50 dark:from-navy-900 dark:to-gold-900">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center animate-fade-in">
-            <div className="flex items-center justify-center mb-6">
-              <Target className="w-12 h-12 text-gold-600 mr-4" />
-              <h2 className={`text-3xl md:text-4xl font-bold text-foreground font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
+            <div className="flex items-center justify-center mb-8">
+              <Target className="w-16 h-16 text-gold-600 mr-4" />
+              <h2 className={`text-4xl md:text-5xl font-bold text-foreground font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
                 {t('missionTitle')}
               </h2>
             </div>
-            <p className={`text-lg text-muted-foreground leading-relaxed font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
+            <p className={`text-xl text-muted-foreground leading-relaxed font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
               {t('missionText')}
             </p>
           </div>
@@ -182,16 +188,16 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-r from-navy-800 to-navy-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-gold-600/10 to-transparent"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className={`text-3xl md:text-4xl font-bold text-white mb-6 font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
+          <h2 className={`text-4xl md:text-5xl font-bold text-white mb-8 font-ge-ss-two ${isArabic ? 'font-arabic' : 'font-english'}`}>
             {isArabic ? 'جاهزون لمساعدتك؟' : 'Ready to Get Started?'}
           </h2>
-          <p className={`text-lg text-white/90 mb-8 max-w-2xl mx-auto font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
+          <p className={`text-xl text-white/90 mb-10 max-w-2xl mx-auto font-ge-ss-two-light ${isArabic ? 'font-arabic' : 'font-english'}`}>
             {isArabic ? 'احجز استشارتك القانونية اليوم واحصل على الدعم المهني الذي تحتاجه' : 'Book your legal consultation today and get the professional support you need'}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="golden-button text-base px-8 py-3 font-ge-ss-two transition-all duration-300 hover:scale-105"
+              className="golden-button text-lg px-10 py-4 font-ge-ss-two transition-all duration-300 hover:scale-105"
               onClick={handleConsultationClick}
               asChild
             >
@@ -199,8 +205,7 @@ const Index = () => {
             </Button>
             <Button 
               size="lg" 
-              variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-navy-800 px-8 py-3 text-base smooth-hover font-ge-ss-two transition-all duration-300 hover:scale-105"
+              className="golden-button text-lg px-10 py-4 font-ge-ss-two transition-all duration-300 hover:scale-105"
               asChild
             >
               <Link to="/services">{t('services')}</Link>
